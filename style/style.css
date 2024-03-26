@@ -1,0 +1,24 @@
+:root{
+    --primary-blue: #5956e9;
+    --body-color: #F8FAE5;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px */
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    background-color: var(--body-color);
+}
+/* Container */
+.container{
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
