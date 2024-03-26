@@ -12,6 +12,7 @@ html{
 body{
     font-size: 1.6rem;
     line-height: 1.6rem;
+    font-family: "Shabnam";
     background-color: var(--body-color);
 }
 /* Container */
@@ -21,4 +22,65 @@ body{
     padding-right: 1.5rem;
     margin-left: auto;
     margin-right: auto;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+/* Header */
+.header{
+    margin: 3rem 0;
+}
+.mainmenu{
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8rem;
+}
+.menu-items{
+    justify-content: center;
+    gap: 3rem;
+}
+.menu-item{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.menu-item a{
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    transition: all 0.2s linear;
+}
+.mainmenu a::after{
+    content: "";
+    background: none repeat scroll 0 0 transparent;
+    display: block;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--primary-blue);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+.menu-item a:hover::after,
+.menu-item a:focus::after{
+    width: 100%; 
+    left: 0;
+}
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 55rem;
+    height: auto;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
 }
