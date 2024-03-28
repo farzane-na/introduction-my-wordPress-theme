@@ -1,13 +1,17 @@
 :root{
     --primary-blue: #5956e9;
+    --secondry-blue:#9091eb;
     --body-color: #F8FAE5;
 }
 html{
     box-sizing: border-box;
     font-size: 62.5%; /* 10px */
+    scroll-behavior: smooth;
 }
 *,*::after,*::before{
     box-sizing: inherit;
+    border: none;
+    outline: none;
 }
 body{
     font-size: 1.6rem;
@@ -15,6 +19,22 @@ body{
     font-family: "Shabnam";
     background-color: var(--body-color);
 }
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.7rem var(--secondery-blue);
+    border-radius: 0.8rem;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border-radius: 0.8rem;
+  }
 /* Container */
 .container{
     width: 100%;
@@ -27,14 +47,24 @@ body{
     display: flex;
     align-items: center;
 }
+h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+h3{
+    line-height: 3rem;
+    padding: 2rem 1rem;
+}
 /* Header */
 .header{
     margin: 3rem 0;
 }
 .mainmenu{
-    width: 100%;
+    width: 83%;
+    
     justify-content: flex-start;
     gap: 8rem;
+    transition: all 0.2s ease;
 }
 .menu-items{
     justify-content: center;
@@ -50,7 +80,8 @@ body{
     position: relative;
     transition: all 0.2s linear;
 }
-.mainmenu a::after{
+.mainmenu a::after,
+.active a::after{
     content: "";
     background: none repeat scroll 0 0 transparent;
     display: block;
@@ -63,7 +94,7 @@ body{
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 .menu-item a:hover::after,
-.menu-item a:focus::after{
+.active a::after{
     width: 100%; 
     left: 0;
 }
@@ -83,4 +114,98 @@ body{
 .swiper-slide img {
     display: block;
     width: 100%;
+}
+
+/* Main */
+.main__description{
+    justify-content: space-between;
+    margin: 5rem 0;
+}
+.main__text-wrapper{
+    width: 60rem;
+}
+.main__image-wrapper{
+    width: 50rem;
+    height: 100rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main__image-wrapper img{
+    width: 100%;
+}
+.main__properties{
+    margin: 3rem 0;
+}
+.main__properties-images{
+    justify-content: space-between;
+    margin: 3rem 0 4rem 0;
+}
+.abstrak-property{
+    width: 40rem;
+}
+.abstrak-property img{
+    width: 100%;
+    aspect-ratio: 1.5;
+    object-fit: contain;
+}
+.main__properties-information{
+    justify-content: space-evenly;
+    margin: 3rem 0;
+}
+.main__properties-items,
+.main__properties-plugins{
+    width: 50rem;
+    height: 50rem;
+}
+.main__properties-item{
+    list-style-type: circle;
+    padding: 1.7rem 0;
+}
+.plugin{
+    padding: 2rem 0;
+}
+.plugin__title{
+    font-weight: 700;
+}
+.plugin__text{
+    line-height: 2.5rem;
+}
+.video{
+    width: 100%;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.video video{
+    position: relative;
+    width: 50%;
+    border-radius: 2rem;
+    z-index: -1;
+}
+.main__get-theme{
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem;
+    gap: 5rem;
+}
+.main__get-theme-btn{
+    transition: all 0.2s ease;
+}
+.main__get-theme-btn a{
+    font-family: "Shabnam";
+    font-size: 1.7rem;
+    padding: 1.5rem;
+    background-color: var(--secondry-blue);
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--body-color);
+    transition: all 0.2s ease;
+}
+.main__get-theme-btn a:hover{
+
+    box-shadow: 0 0 15px var(--primary-blue);
+}
+.main__get-theme-btn:hover{
+    transform: scale(1.2) ;
 }
