@@ -70,6 +70,7 @@ h2 {
 
 .header {
     margin-bottom: 4rem;
+    line-height: 3rem;
 }
 
 .form {
@@ -121,12 +122,13 @@ h2 {
     flex-direction: column;
     border-radius: 2rem;
     box-shadow: 0 0 15px var(--secondry-blue);
-    padding: 3rem 0;
+    padding: 3rem 2rem;
     display: none;
 }
 
 .show-url-header {
     margin-bottom: 2.5rem;
+    line-height: 3rem;
 }
 
 .file-link {
@@ -136,4 +138,66 @@ h2 {
 
 .file-link img {
     width: 100%;
+}
+
+/* Responsive */
+
+@media(min-width:230px){
+    .container{
+        width: 97%;
+        margin: 0 auto;
+    }
+}
+@media (min-width:546px){
+    .container{
+        width:54rem ;
+    }
+}
+
+@media (min-width:768px){
+    .container{
+        width: 72rem;
+    }
+}
+
+@media (min-width:992px){
+    .container{
+        width: 96rem;
+    }
+}
+
+@media (min-width:1200px){
+    .container{
+        width:114rem ;
+    }
+}
+
+@media (min-width:1400px){
+    .container{
+        width: 137rem;
+    }
+}
+@media (max-width:992px){
+    .username-wrapper,
+    .password-wrapper{
+        width: 100%;
+    }
+}
+@media (max-width:460px){
+    .username-wrapper,
+    .password-wrapper{
+        flex-direction: column;
+    }
+    .username,
+    .password{
+        margin-bottom: 2rem;
+    }
+}
+@media (max-width:430px){
+    .file-link{
+        width: 13rem;
+    }
+    .show-url{
+        width: 100%;
+    }
 }
