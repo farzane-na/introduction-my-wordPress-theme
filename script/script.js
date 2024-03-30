@@ -6,6 +6,8 @@ let menuItem1 = $.querySelector(".item1");
 let menuItem2 = $.querySelector(".item2");
 let menuItem3 = $.querySelector(".item3");
 let menuItem4 = $.querySelector(".item4");
+let infoFileSection = $.querySelector(".info-file");
+let mainReasonSection = $.querySelector(".main__reason");
 let backToTop = $.querySelector(".back-to-top");
 let openOffCanvasMenu = $.querySelector(".fa-bars");
 let closeOffCanvasMenu = $.querySelector(".fa-times");
@@ -16,22 +18,30 @@ let itemsMenuMobile = $.querySelectorAll(".item-mobile");
 
 // This function is responsible for making the menu bar stick when the page is scrolled.
 function scrollNavMenu() {
-  if ($.documentElement.scrollTop > 330) {
-    navMenu.style.cssText = "position:fixed; top:0;  padding:3rem 1rem 2rem 0; backdrop-filter: blur(10px); box-shadow:0 0 15px var(--secondry-blue); border-radius: 2rem;";
+  if ($.documentElement.scrollTop > 100) {
+    navMenu.style.cssText = "position:fixed; top:0;  padding:3rem 1rem 2rem 0; backdrop-filter: blur(10px); box-shadow:0 0 15px var(--secondry-blue); border-radius: 2rem; z-index:3;";
   } else {
     navMenu.style.cssText = "position:reletives; background-color: transparent; padding:3rem 1rem 2rem 0;";
   };
 };
 
+//This function is responsible for giving animation to the menu bar in desktop mode.
+function controlNavMenuAnimation() {
+  if ($.documentElement.scrollTop > 100) {
+    navMenu.classList.add("animate__animated", "animate__fadeInDown");
+  } else {
+    navMenu.classList.remove("animate__animated", "animate__fadeInDown");
+  }
+}
+
 // This function has the task of specifying the desired item of that section in the menu bar when the page reaches the desired section.
 function activeItemMenu() {
-  console.log($.documentElement.scrollTop);
-  if ($.documentElement.scrollTop < 330) {
+  if ($.documentElement.scrollTop < 110) {
     menuItem1.classList.remove("active");
     menuItem2.classList.remove("active");
     menuItem3.classList.remove("active");
     menuItem4.classList.remove("active");
-  } else if ($.documentElement.scrollTop > 330 && $.documentElement.scrollTop < 1450) {
+  } else if ($.documentElement.scrollTop > 110 && $.documentElement.scrollTop < 1450) {
     menuItem1.classList.add("active");
     menuItem2.classList.remove("active");
     menuItem3.classList.remove("active");
@@ -54,6 +64,21 @@ function activeItemMenu() {
   };
 };
 
+// This function has the task of adding or removing animation to link file of info section and video section parts of the body.
+function addAnimationToBody() {
+  if ($.documentElement.scrollTop < 2050) {
+    infoFileSection.classList.remove("animate__animated", "animate__shakeX");
+    mainReasonSection.classList.remove("animate__animated", "animate__zoomIn");
+  } else if ($.documentElement.scrollTop > 2050 && $.documentElement.scrollTop < 2200) {
+    infoFileSection.classList.add("animate__animated", "animate__shakeX");
+    mainReasonSection.classList.remove("animate__animated", "animate__zoomIn");
+  } else if ($.documentElement.scrollTop > 2200 && $.documentElement.scrollTop < 2550) {
+    infoFileSection.classList.remove("animate__animated", "animate__shakeX");
+    mainReasonSection.classList.add("animate__animated", "animate__zoomIn");
+  };
+};
+
+
 // This function is responsible for displaying the back to the top circle.
 function showBackToTopCircle() {
   if ($.documentElement.scrollTop > 400) {
@@ -68,6 +93,8 @@ function scrollBar() {
   scrollNavMenu();
   activeItemMenu();
   showBackToTopCircle();
+  controlNavMenuAnimation();
+  addAnimationToBody();
 };
 
 // return to the top of the page.
@@ -87,12 +114,13 @@ function closeOffCanvasMenuHandeler() {
 
 // Events
 window.addEventListener("scroll", scrollBar);
+// window.addEventListener("scroll", addAnimationToBody,{once:true});
 backToTop.addEventListener("click", backToTopHandeler);
 openOffCanvasMenu.addEventListener("click", openOffCanvasMenuHandeler);
 closeOffCanvasMenu.addEventListener("click", closeOffCanvasMenuHandeler);
 itemsMenuMobile.forEach(function (item) {
   item.addEventListener("click", closeOffCanvasMenuHandeler);
-})
+});
 
 // Swiper Library
 var swiper = new Swiper(".mySwiper", {
