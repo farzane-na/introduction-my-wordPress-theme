@@ -16,8 +16,8 @@ let fileLink=$.querySelector("file-link");
 // Check the Values of inputs.
 function checkInputValue(event){
     event.preventDefault();
-    let username=usernameValue.value;
-    let password=passwordValue.value;
+    let username=usernameValue.value.toLowerCase();
+    let password=passwordValue.value.toLowerCase();
     let availableValue=users.some(function(user){
         return user.name===username && user.number===password;
     });

@@ -63,6 +63,7 @@ h2 {
 h3 {
     line-height: 3rem;
     padding: 2rem 1rem;
+    text-align: justify;
 }
 
 p {
@@ -74,9 +75,9 @@ p {
     display: none;
     justify-content: center;
     position: fixed;
-    bottom: 6%;
-    left: 2%;
-    z-index: 1;
+    bottom: 4vw;
+    left: 4vw;
+    z-index: 4;
     width: 4rem;
     height: 4rem;
     border-radius: 100%;

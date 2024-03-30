@@ -75,13 +75,13 @@
         top: 0;
         left: -256rem;
         z-index: 2;
-        width: 40vw;
+        width: 50vw;
         height: 100vh;
         padding: 6rem 2rem 3rem 2rem;
         flex-direction: column;
         justify-content: flex-start;
         gap: 4rem;
-        background-color: var(--body-color);
+        background-color: var(--soft-blue);
         box-shadow: 0 0 15px var(--secondry-blue);
         transition: all 0.7s ease-in-out;
     }
@@ -101,14 +101,14 @@
 
     .offcanvas-menu .menu-item {
         width: 100%;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
         display: flex;
         justify-content: center;
         border-bottom: 2px solid var(--primary-blue);
     }
 
     .swiper-slide {
-        width: 70%;
+        width: 78%;
     }
 
     .main__properties-items,
