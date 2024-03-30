@@ -203,6 +203,7 @@ p {
     width: 100%;
     aspect-ratio: 1.5;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .main__properties-information {

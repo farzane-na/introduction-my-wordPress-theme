@@ -13,6 +13,7 @@ let openOffCanvasMenu = $.querySelector(".fa-bars");
 let closeOffCanvasMenu = $.querySelector(".fa-times");
 let offCanvasMenu = $.querySelector(".offcanvas-menu");
 let itemsMenuMobile = $.querySelectorAll(".item-mobile");
+let images=$.querySelectorAll("img");
 
 // Functions : 
 
@@ -112,6 +113,11 @@ function closeOffCanvasMenuHandeler() {
   offCanvasMenu.style.left = "-256rem";
 }
 
+// opening images
+function openImages(){
+  window.open(this.src);
+}
+
 // Events
 window.addEventListener("scroll", scrollBar);
 // window.addEventListener("scroll", addAnimationToBody,{once:true});
@@ -121,6 +127,9 @@ closeOffCanvasMenu.addEventListener("click", closeOffCanvasMenuHandeler);
 itemsMenuMobile.forEach(function (item) {
   item.addEventListener("click", closeOffCanvasMenuHandeler);
 });
+images.forEach(function(img){
+  img.addEventListener("click",openImages)
+})
 
 // Swiper Library
 var swiper = new Swiper(".mySwiper", {
