@@ -52,12 +52,12 @@ function activeItemMenu() {
     menuItem1.classList.remove("active");
     menuItem3.classList.remove("active");
     menuItem4.classList.remove("active");
-  } else if ($.documentElement.scrollTop > 2200 && $.documentElement.scrollTop < 2550) {
+  } else if ($.documentElement.scrollTop > 2200 && $.documentElement.scrollTop < 2900) {
     menuItem3.classList.add("active");
     menuItem1.classList.remove("active");
     menuItem2.classList.remove("active");
     menuItem4.classList.remove("active");
-  } else if ($.documentElement.scrollTop > 2500) {
+  } else if ($.documentElement.scrollTop > 2900) {
     menuItem4.classList.add("active");
     menuItem1.classList.remove("active");
     menuItem2.classList.remove("active");
