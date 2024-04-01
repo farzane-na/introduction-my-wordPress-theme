@@ -118,7 +118,7 @@ function openOffCanvasMenuHandeler() {
 
 // This function is responsible for closing the offcanvas menu.
 function closeOffCanvasMenuHandeler() {
-  offCanvasMenu.style.left = "-256rem";
+  offCanvasMenu.style.right = "-25rem";
 }
 
 // opening images
