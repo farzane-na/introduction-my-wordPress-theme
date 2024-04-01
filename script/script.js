@@ -21,7 +21,7 @@ let images = $.querySelectorAll("img");
 // This function is responsible for making the menu bar stick when the page is scrolled.
 function scrollNavMenu() {
   if ($.documentElement.scrollTop > 100) {
-    navMenu.style.cssText = "position:fixed; top:0;  padding:3rem 1rem 2rem 0; backdrop-filter: blur(10px); box-shadow:0 0 15px var(--secondry-blue); border-radius: 2rem; z-index:3;";
+    navMenu.style.cssText = "position:fixed; top:0;  padding:3rem 1rem 2rem 0; backdrop-filter: blur(10px);    -webkit-backdrop-filter: blur(10px); box-shadow:0 0 15px var(--secondry-blue); border-radius: 2rem; z-index:3;";
   } else {
     navMenu.style.cssText = "position:reletives; background-color: transparent; padding:3rem 1rem 2rem 0;";
   };
