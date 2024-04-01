@@ -107,7 +107,7 @@ function backToTopHandeler() {
 function openOffCanvasMenuHandeler() {
   if (navOpen) {
     navBtn.classList.remove("nav__btn--open");
-    offCanvasMenu.style.right = "-35rem";
+    offCanvasMenu.style.right = "-25rem";
     navOpen = false;
   } else {
     navBtn.classList.add("nav__btn--open");

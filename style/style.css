@@ -151,7 +151,7 @@ p {
 .offcanvas-menu {
     position: fixed;
     top: 0;
-    left: -256rem;
+    right: -25rem;
     z-index: 2;
     width: 25rem;
     height: 100vh;
