@@ -244,6 +244,7 @@ p {
     border-radius: 10rem;
     position: relative;
 }
+
 .offcanvas-menu .menu-item::after {
     content: " ";
     width: 20rem;
@@ -254,8 +255,9 @@ p {
     background-color: var(--primary-blue);
     border-radius: 50rem;
     opacity: 0.6;
-} 
-.item-mobile .fa{
+}
+
+.item-mobile .fa {
     font-size: 2rem;
     color: var(--primary-blue);
 }
