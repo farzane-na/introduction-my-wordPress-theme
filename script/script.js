@@ -9,11 +9,11 @@ let menuItem4 = $.querySelector(".item4");
 let infoFileSection = $.querySelector(".info-file");
 let mainReasonSection = $.querySelector(".main__reason");
 let backToTop = $.querySelector(".back-to-top");
-let navBtn=$.querySelector(".nav__btn")
-let navOpen=false;
+let navBtn = $.querySelector(".nav__btn")
+let navOpen = false;
 let offCanvasMenu = $.querySelector(".offcanvas-menu");
 let itemsMenuMobile = $.querySelectorAll(".item-mobile");
-let images=$.querySelectorAll("img");
+let images = $.querySelectorAll("img");
 
 // Functions : 
 
@@ -105,14 +105,14 @@ function backToTopHandeler() {
 
 // This function is responsible for opening the offcanvas menu.
 function openOffCanvasMenuHandeler() {
-  if(navOpen){
+  if (navOpen) {
     navBtn.classList.remove("nav__btn--open");
-    offCanvasMenu.style.right="-35rem";
-    navOpen=false;
-  }else{
+    offCanvasMenu.style.right = "-35rem";
+    navOpen = false;
+  } else {
     navBtn.classList.add("nav__btn--open");
-    offCanvasMenu.style.right="0";
-    navOpen=true;
+    offCanvasMenu.style.right = "0";
+    navOpen = true;
   }
 }
 
@@ -122,7 +122,7 @@ function closeOffCanvasMenuHandeler() {
 }
 
 // opening images
-function openImages(){
+function openImages() {
   window.open(this.src);
 }
 
@@ -134,8 +134,8 @@ navBtn.addEventListener("click", openOffCanvasMenuHandeler);
 itemsMenuMobile.forEach(function (item) {
   item.addEventListener("click", closeOffCanvasMenuHandeler);
 });
-images.forEach(function(img){
-  img.addEventListener("click",openImages)
+images.forEach(function (img) {
+  img.addEventListener("click", openImages)
 })
 
 // Swiper Library
