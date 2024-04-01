@@ -9,8 +9,8 @@ let menuItem4 = $.querySelector(".item4");
 let infoFileSection = $.querySelector(".info-file");
 let mainReasonSection = $.querySelector(".main__reason");
 let backToTop = $.querySelector(".back-to-top");
-let openOffCanvasMenu = $.querySelector(".fa-bars");
-let closeOffCanvasMenu = $.querySelector(".fa-times");
+let navBtn=$.querySelector(".nav__btn")
+let navOpen=false;
 let offCanvasMenu = $.querySelector(".offcanvas-menu");
 let itemsMenuMobile = $.querySelectorAll(".item-mobile");
 let images=$.querySelectorAll("img");
@@ -105,7 +105,15 @@ function backToTopHandeler() {
 
 // This function is responsible for opening the offcanvas menu.
 function openOffCanvasMenuHandeler() {
-  offCanvasMenu.style.left = "0";
+  if(navOpen){
+    navBtn.classList.remove("nav__btn--open");
+    offCanvasMenu.style.right="-35rem";
+    navOpen=false;
+  }else{
+    navBtn.classList.add("nav__btn--open");
+    offCanvasMenu.style.right="0";
+    navOpen=true;
+  }
 }
 
 // This function is responsible for closing the offcanvas menu.
@@ -122,8 +130,7 @@ function openImages(){
 window.addEventListener("scroll", scrollBar);
 // window.addEventListener("scroll", addAnimationToBody,{once:true});
 backToTop.addEventListener("click", backToTopHandeler);
-openOffCanvasMenu.addEventListener("click", openOffCanvasMenuHandeler);
-closeOffCanvasMenu.addEventListener("click", closeOffCanvasMenuHandeler);
+navBtn.addEventListener("click", openOffCanvasMenuHandeler);
 itemsMenuMobile.forEach(function (item) {
   item.addEventListener("click", closeOffCanvasMenuHandeler);
 });
