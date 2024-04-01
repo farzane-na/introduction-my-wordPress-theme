@@ -122,9 +122,16 @@ function openOffCanvasMenuHandeler() {
 // This function is responsible for closing the offcanvas menu.
 function closeOffCanvasMenuHandeler() {
   offCanvasMenu.style.right = "-25rem";
+  navBtn.classList.remove("nav__btn--open");
   bodyGlass.classList.remove("body-glass--active");
 }
 
+// This function has the task of closing the off canvas menu when the body glass is tapped.
+function closeOffCanvasMenuWithBodyGlass() {
+  navBtn.classList.remove("nav__btn--open");
+  offCanvasMenu.style.right = "-25rem";
+  bodyGlass.classList.remove("body-glass--active");
+}
 // opening images
 function openImages() {
   window.open(this.src);
@@ -139,8 +146,9 @@ itemsMenuMobile.forEach(function (item) {
   item.addEventListener("click", closeOffCanvasMenuHandeler);
 });
 images.forEach(function (img) {
-  img.addEventListener("click", openImages)
-})
+  img.addEventListener("click", openImages);
+});
+bodyGlass.addEventListener("click", closeOffCanvasMenuWithBodyGlass)
 
 // Swiper Library
 var swiper = new Swiper(".mySwiper", {
