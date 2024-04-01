@@ -171,11 +171,13 @@ p {
     z-index: 3;
     width: 25rem;
     height: 100vh;
-    padding: 6rem 2rem 3rem 2rem;
+    padding: 8rem 2rem 3rem 2rem;
     flex-direction: column;
     justify-content: flex-start;
     gap: 4rem;
     background-color: var(--soft-blue);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
     box-shadow: 0 0 15px var(--secondry-blue);
     transition: all 200ms ease-in-out;
 }
@@ -234,10 +236,28 @@ p {
 
 .offcanvas-menu .menu-item {
     width: 100%;
-    padding-bottom: 2rem;
+    margin-bottom: 4rem;
     display: flex;
-    justify-content: center;
-    border-bottom: 2px solid var(--primary-blue);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 10rem;
+    position: relative;
+}
+.offcanvas-menu .menu-item::after {
+    content: " ";
+    width: 20rem;
+    height: 0.3rem;
+    text-align: center;
+    position: absolute;
+    top: 6rem;
+    background-color: var(--primary-blue);
+    border-radius: 50rem;
+    opacity: 0.6;
+} 
+.item-mobile .fa{
+    font-size: 2rem;
+    color: var(--primary-blue);
 }
 
 /* Swiper library for slider image */
