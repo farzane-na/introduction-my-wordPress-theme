@@ -93,7 +93,8 @@ p {
     transform: translateY(-3px);
 }
 
-.body-glass {
+
+.body-glass--active {
     position: fixed;
     top: 0;
     left: 0;
@@ -101,9 +102,6 @@ p {
     bottom: 0;
     z-index: 2;
     transition: all 200ms ease-in-out;
-}
-
-.body-glass--active {
     background: linear-gradient(rgba(59, 52, 58, 0.2), rgba(59, 52, 58, 0.2));
     backdrop-filter: blur(2px);
 }
@@ -167,10 +165,10 @@ p {
 .offcanvas-menu {
     position: fixed;
     top: 0;
+    bottom: 0;
     right: -25rem;
     z-index: 3;
     width: 25rem;
-    height: 100vh;
     padding: 8rem 2rem 3rem 2rem;
     flex-direction: column;
     justify-content: flex-start;
