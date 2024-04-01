@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /* 10px */
+    font-size: 62.5%;
+    /* 10px */
     scroll-behavior: smooth;
 }
 
@@ -92,6 +93,21 @@ p {
     transform: translateY(-3px);
 }
 
+.body-glass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: all 200ms ease-in-out;
+}
+
+.body-glass--active {
+    background: linear-gradient(rgba(59, 52, 58, 0.2), rgba(59, 52, 58, 0.2));
+    backdrop-filter: blur(2px);
+}
+
 /* Header */
 .header {
     margin: 3rem 0;
@@ -152,7 +168,7 @@ p {
     position: fixed;
     top: 0;
     right: -25rem;
-    z-index: 2;
+    z-index: 3;
     width: 25rem;
     height: 100vh;
     padding: 6rem 2rem 3rem 2rem;
@@ -161,7 +177,7 @@ p {
     gap: 4rem;
     background-color: var(--soft-blue);
     box-shadow: 0 0 15px var(--secondry-blue);
-    transition: all 0.7s ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .nav__btn {
@@ -173,6 +189,7 @@ p {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 3;
 }
 
 .nav__btn-line {
@@ -192,7 +209,7 @@ p {
     border-radius: 10rem;
     background-color: var(--primary-blue);
     position: absolute;
-    transition: all 150ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .nav__btn-line::before {
@@ -235,6 +252,8 @@ p {
     background-size: cover;
     width: 55rem;
     height: auto;
+    border-radius: 1.5rem;
+    overflow: hidden;
 }
 
 .swiper-slide img {

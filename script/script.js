@@ -9,8 +9,9 @@ let menuItem4 = $.querySelector(".item4");
 let infoFileSection = $.querySelector(".info-file");
 let mainReasonSection = $.querySelector(".main__reason");
 let backToTop = $.querySelector(".back-to-top");
-let navBtn = $.querySelector(".nav__btn")
+let navBtn = $.querySelector(".nav__btn");
 let navOpen = false;
+let bodyGlass=$.querySelector(".body-glass");
 let offCanvasMenu = $.querySelector(".offcanvas-menu");
 let itemsMenuMobile = $.querySelectorAll(".item-mobile");
 let images = $.querySelectorAll("img");
@@ -108,10 +109,12 @@ function openOffCanvasMenuHandeler() {
   if (navOpen) {
     navBtn.classList.remove("nav__btn--open");
     offCanvasMenu.style.right = "-25rem";
+    bodyGlass.classList.remove("body-glass--active");
     navOpen = false;
   } else {
     navBtn.classList.add("nav__btn--open");
     offCanvasMenu.style.right = "0";
+    bodyGlass.classList.add("body-glass--active");
     navOpen = true;
   }
 }
@@ -119,6 +122,7 @@ function openOffCanvasMenuHandeler() {
 // This function is responsible for closing the offcanvas menu.
 function closeOffCanvasMenuHandeler() {
   offCanvasMenu.style.right = "-25rem";
+  bodyGlass.classList.remove("body-glass--active");
 }
 
 // opening images
